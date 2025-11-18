@@ -2,12 +2,81 @@
 <html>
 
 <head>
-    <title>My Extension</title>
+    <title>Soham's Personal Assistant</title>
+    <style>
+   body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 10px;
+      width: 320px;
+      background: #F5F5F5;
+      color: #333;
+    }
+
+    h3 {
+      margin: 0 0 10px 0;
+      padding: 10px;
+      background: linear-gradient(90deg, #003366, #00A1A1);
+      color: white;
+      font-size: 16px;
+      text-align: center;
+      border-radius: 4px;
+    }
+
+    #chat {
+      height: 300px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 8px;
+      margin-bottom: 10px;
+      background: white;
+    }
+
+    .msg {
+      margin: 6px 0;
+      padding: 6px 10px;
+      border-radius: 12px;
+      max-width: 80%;
+      font-size: 14px;
+    }
+
+    .user {
+      background: #003366;
+      color: white;
+      margin-left: auto;
+      text-align: right;
+    }
+
+    .bot {
+      background: #00A1A1;
+      color: white;
+      margin-right: auto;
+      text-align: left;
+    }
+
+    #input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    #clickMe {
+      display: none;
+    }
+
+  </style>
+
 </head>
 
 <body>
-    <h3>Hello from My Extension!</h3>
-    <button id="clickMe">Click Me</button>
+    <h3>Soham's Personal Assistant 🧠 </h3>
+    <button id="clickMe" style="display: none;">Click Me</button>
+    <div id="chat"></div>
+  <input type="text" id="input" placeholder="Type a message... " style="width: 100%;" />
+
     <script src="popup.js"></script>
     <div id="output"></div>
 </body>
