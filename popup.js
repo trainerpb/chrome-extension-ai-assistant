@@ -8,7 +8,23 @@ document.getElementById('clickMe').addEventListener('click', () => {
             if (chrome.runtime.lastError) {
                 document.getElementById('output').textContent = 'Error: ' + chrome.runtime.lastError.message;
             } else {
-                document.getElementById('output').textContent = results[0].result;
+                let textContent = results[0].result;
+                document.getElementById('output').textContent = textContent;
+                fetch("http://localhost:8080/api/chrome/chunks-to-vector-store", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "text/plain"
+                    },
+                    body: textContent
+                })
+
+                    .then(data => {
+                        document.getElementById("output").textContent = data;
+                    })
+                    .catch(err => {
+                        document.getElementById("output").textContent = "Error: " + err;
+                    });
+
             }
         });
     });
