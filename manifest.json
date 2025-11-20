@@ -9,11 +9,19 @@
             "16": "idealo.png",
             "48": "idealo.png",
             "128": "idealo.png"
-        }
+    
+  
+        },
+"default_title": "Open Side Panel"
+
     },
+"side_panel": {
+    "default_path": "popup.html"
+  },
     "permissions": [
         "scripting",
-        "activeTab"
+        "activeTab",
+	"sidePanel"
     ],
     "host_permissions": [
         "http://*/*",
