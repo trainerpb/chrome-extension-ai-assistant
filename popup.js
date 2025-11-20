@@ -1,7 +1,17 @@
 const chat = document.getElementById('chat');
 const input = document.getElementById('input');
 
-const API = "http://192.168.137.84:8080/api/chat/whatsapp-stream?q="
+let API = null;
+chrome.storage.local.get("apiEndpoint", (result) => {
+  if (result.apiEndpoint) {
+    console.log("Using endpoint:", result.apiEndpoint);
+    API=result.apiEndpoint + "/api/chat/whatsapp-stream?q="
+   }else{
+ alert("Cannot find apiEndPoint config. Please set it up first before using!");
+
+}
+});
+
 input.addEventListener('keydown', (e) => {
     console.log("Keydown ---------------------------------");
     if (e.key === 'Enter' && input.value.trim().length > 0) {
